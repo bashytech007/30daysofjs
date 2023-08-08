@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //1 
+  function calculateAreatriangle(base,height){
+    return 0.5 *base *height
+}
+function mainArea(){
+    alert('Calculate the area of a traingle');
+    const base=parseFloat(prompt('Enter base: '))
+    const height=parseFloat(prompt('Enter height: '))
+    
+    const area=calculateAreatriangle(base,height);
+    alert(`the area of triangle is${area}`)
+}
+
+mainArea();
+//2
+function calculatePerimetertriangle(l,b,h){
+    return l+b+h
+}
+function mainPerimeter(){
+    alert('Calculate the perimeter of a triangle')
+     const l=parseFloat(prompt('Enter l:'))
+     const b=parseFloat(prompt('Enter b:'))
+     const h=parseFloat(prompt('Enter h:'))
+
+     const perimeter=calculatePerimetertriangle(l,b,h)
+     alert(`the perimeter of triangle is ${perimeter}`)
+}
+mainPerimeter()
+//3
+function calculateAreaRectangle(length,width){
+    return length * width;
+}
+function calculatePerimeterRectangle(length,width){
+    return 2*(length + width)
+}
+function main(){
+    alert('calculate the area and perimeter of a rectangle')
+    const length=parseFloat(prompt('Enter length:'))
+    const width=parseFloat(prompt('Enter width:'))
+
+    const area=calculateAreaRectangle(length,width)
+    const perimeter=calculatePerimeterRectangle(length,width)
+
+    alert(`the area of rectangle is ${area}\n the perimiter of rectangle is ${perimeter}`)
+    // console.log(`the area of rectangle is ${area}\n the perimiter of rectangle is ${perimeter}`)
+}
+main()
+//4
+const pi=3.14
+function calculateCircleArea(radius){
+    return pi *radius*radius
+}
+function calculateCircleCircumfrence(radius){
+    return 2 * pi* radius
+}
+function mainCalc(){
+  alert('calculate the area and circumference of a circle')
+  const radius=parseFloat(prompt('Enter radius:'))
+  const area=calculateCircleArea(radius);
+  const circumference=calculateCircleCircumfrence(radius)
+
+  alert(`the area of the circle is ${area}\n The circumference of the circle is ${circumference}`)
+}
+mainCalc()
+//5
+function calculateSlope(coefficient){
+    return coefficient
+}
+function calculateXIntercept(constant){
+    return constant/2
+}
+function calculateYIntercept(constant){
+    return constant;
+}
+function mainSlope(){
+    const coefficient=2
+    const constant=-2;
+
+    const slope=calculateSlope(coefficient);
+    const xIntercept=calculateXIntercept(constant)
+    const yIntercept=calculateYIntercept(constant);
+
+    alert(`Equation:y =${coefficient}x ${constant <0 ? '' :'-'}${Math.abs(constant)}\n\nSlope:${slope}\nX-intercept:(${xIntercept,0})\nY-intercept:(0,${yIntercept})`)
+}
+mainSlope()
+//6
+function calculateSlope1(x1,y1,x2,y2){
+    return (y2-y1)/(x2-x1)
+}
+function slope1(){
+    const x1=2
+    const y1=2
+    const x2=6
+    const y2=10
+
+    const slope1=calculateSlope1(x1,y1,x2,y2)
+
+    alert(`Slope between (${x1},${y1} and (${x2}) is ${slope1})`)
+}
+slope1()
+//7
+//1Equation y=2x-2
+//slope(m)=2
+//2 points(2,2) and (6,10)
+//slope=(y2-y1)/(x2-x1)
+//slope=(10-2)/(6-2)
+//slope=8/4
+//slope=2
+//8
+function calculateY(x){
+    return x*x + 6 * x +9
+}
+function mainY(){
+    const xValues=[-6,-3,0,2,7];//random values to test
+    for(const x of xValues){
+        const y=calculateY(x)
+        alert(`When x =${x},y=${y}`)
+        if(y===0){
+            alert(`At x =${x},y is 0`)
+        }
+    }
+}
+mainY()
+//9
+function calculateWeekPay(hours,ratePerHour){
+    return hours * ratePerHour
+}
+function mainPay(){
+    alert('Calculate your weekly earning')
+    const hours=parseFloat(prompt('Enter hours:'))
+    const ratePerHour=parseFloat(prompt('Enter rate per hour:'))
+
+    const weeklyPay=calculateWeekPay(hours,ratePerHour)
+    alert(`Your weekly earning is ${weeklyPay}`)
+}
+mainPay()
+//13
+function canDrive(age){
+    if(age>=18){
+        return 'Your are old enough to drive'
+    }else{
+        const yearsToWait=18-age;
+        return `You will be allowed to drive after ${yearsToWait} years`
+    }
+}
+
+function mainAge(){
+    const currentYear=new Date().getFullYear();
+    const birthYear=parseInt(prompt('Enter birth year: '))
+    const age=currentYear -birthYear
+    const message=canDrive(age)
+    alert(`You are ${age}. ${message}`)
+}
+mainAge()
+//14
+function calculateSeconds(years){
+    const secondsPerYear=365*24*60*60
+    return years * secondsPerYear
+}
+function mainSeconds(){
+    const years=parseFloat(prompt('Enter number of years you live:'))
+
+    const seconds=calculateSeconds(years)
+    alert(`You lived ${seconds} seconds`)
+}
+mainSeconds()
+//15
+function formatDateTime(date,format){
+    const year=date.getFullYear()
+    const month=String(date.getMonth()+1).padStart(2,'0')
+    const day=String(date.getDate().padStart(2,'0'))
+    const hours=String(date.getHours().padStart(2,'0'))
+    const minutes=String(date.getMinutes().padStart(2,'0'))
+    switch (format){
+        case 'YYYY-MM-DD HH:mm':
+            return `${year}-${month}-${day} ${hours}:${minutes}`;
+            case 'DD-MM-YYYY HH:mm':
+                return `${day}-${month}-${year} ${hours}:${minutes}`
+                case 'DD/MM/YYYY HH:mm':
+                    return `${day}/${month}/${year} ${hours}:${minutes}`
+                    default:
+                        return 'Invalid Format'
+    }
+}
+function mainDate(){
+    const data=new Date();
+    const format1=formatDateTime(date,'YYYY-MM-DD HH:mm')
+    const format2=formatDateTime(date,'DD-MM-YYYY HH:mm')
+    const format3=formatDateTime(date,'DD/MM/YYYY HH:mm')
+    console.log(`Format 1:${format1}`)
+    console.log(`Format 2:${format2}`)
+    console.log(`Format 3:${format3}`)
+}
+mainDate()
+        </script>
+</body>
+</html>
