@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Excercise1</title>
+  </head>
+  <body>
+    <!-- 1 -->
+    <script>
+      // 1
+      let ageUserInput = prompt("Enter your age", "");
+      let age = parseInt(ageUserInput);
+
+      if (age >= 18) {
+        console.log(`you are old enough to drive`);
+      } else {
+        let yearsLeft = 18 - age;
+        console.log(
+          `you are not old enought to drive,you have ${yearsLeft} years left to drive`
+        )
+      }
+
+      //   let myAgeUserInput = prompt("Enter my age", "");
+      //   let yourAgeUserInput = prompt("Enter your age", "");
+      //   let myAge = parseInt(myAgeUserInput);
+      //   let yourAge = parseInt(yourAgeUserInput);
+      //   let ageGap = myAge - yourAge ;
+
+      //   if (myAge > yourAge) {
+      //     console.log(`I am ${ageGap} years older than you`);
+      //   } else if (yourAge < myAge) {
+      //     console.log(`you are ${ageGap} years younger than me`);
+      //   } else {
+      //     console.log(`we are of the same age`);
+      //   }
+      //     let myAge = 0; // Default age for me (you can change this value)
+
+      // let yourAgeInput = prompt("Enter your age:");
+      // let yourAge = parseInt(yourAgeInput);
+
+      // let myAgeInput = prompt("Enter my age:");
+      // myAge = parseInt(myAgeInput);
+
+      // if (yourAge > myAge) {
+      //   let ageDifference = yourAge - myAge;
+      //   console.log(`You are ${ageDifference} years older than me.`);
+      // } else if (yourAge < myAge) {
+      //   let ageDifference = myAge - yourAge;
+      //   console.log(`You are ${ageDifference} years younger than me.`);
+      // } else {
+      //   console.log("We are the same age!");
+      // }
+
+      // 2
+      let myAge = 0;
+      let yourAgeInput = prompt("Enter your age");
+      let yourAge = parseInt(yourAgeInput);
+      let myAgeInput = prompt("Enter my age:");
+      myAge = parseInt(myAgeInput);
+
+      if (yourAge > myAge) {
+        let ageDifference = yourAge - myAge;
+        console.log(`your are ${ageDifference} older than me`);
+      } else if (myAge > yourAge) {
+        let ageDifference = myAge - yourAge;
+        console.log(`you are ${ageDifference} younger than me`);
+      } else {
+        console.log(`we are of the same age`);
+      }
+      //4
+
+      let score = prompt("Enter student scrore:");
+      if (score >= 80 && score <= 100) {
+        console.log("Grade A:");
+      } else if (score >= 70 && score <= 80) {
+        console.log("Grade B:");
+      } else if (score >= 60 && score <= 70) {
+        console.log("Grade C:");
+      } else if (score >= 50 && score <= 60) {
+        console.log("Grade D:");
+      } else if (score >= 0 && score <= 49) {
+        console.log("Grade F:");
+      } else {
+        console.log("Invalid score");
+      }
+
+      let month=prompt('Enter the name of the month') 
+      month = month.toLowerCase();
+      switch (month) {
+        case "september":
+        case "october":
+        case "november":
+        
+          console.log("The season is Autumn");
+          break;
+        case "december":
+        case "january":
+        case "february":
+          console.log("The season is WInter");
+          break;
+        case "march":
+        case "april":
+        case "may":
+          console.log("the season is spring");
+          break;
+        case "june":
+        case "july":
+        case "august":
+          console.log("The season is Summer");
+          break
+          default:
+            console("Invalid month or month does not exist")
+      }
+   
+      // /excercis2 
+let day = prompt("What is the day today?");
+day = day.toLowerCase();
+
+if (day === "saturday" || day === "sunday") {
+  console.log(`${day.charAt(0).toUpperCase() + day.slice(1)} is a weekend.`);
+} else if (day === "monday" || day === "tuesday" || day === "wednesday" || day === "thursday" || day === "friday") {
+  console.log(`${day.charAt(0).toUpperCase() + day.slice(1)} is a working day.`);
+} else {
+  console.log("Invalid day input.");
+}
+//excercise3
+let monthOfTheYear = prompt("Enter a month:");
+month = month.toLowerCase();
+let isLeapYear = false; // Initialize to false
+
+let year = prompt("Enter a year:");
+year = parseInt(year);
+
+if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+  isLeapYear = true;
+}
+
+switch (monthOfTheYear) {
+  case "january":
+  case "march":
+  case "may":
+  case "july":
+  case "august":
+  case "october":
+  case "december":
+    console.log(`${monthOfTheYear.charAt(0).toUpperCase() + monthOfTheYear.slice(1)} has 31 days.`);
+    break;
+  case "april":
+  case "june":
+  case "september":
+  case "november":
+    console.log(`${monthOfTheYear.charAt(0).toUpperCase() + monthOfTheYear.slice(1)} has 30 days.`);
+    break;
+  case "february":
+    if (isLeapYear) {
+      console.log(`${monthOfTheYear.charAt(0).toUpperCase() + monthOfTheYear.slice(1)} has 29 days (Leap Year).`);
+    } else {
+      console.log(`${monthOfTheYear.charAt(0).toUpperCase() + monthOfTheYear.slice(1)} has 28 days.`);
+    }
+    break;
+  default:
+    console.log("Invalid month input.");
+}
+
+
+
+    </script>
+  </body>
+</html>
